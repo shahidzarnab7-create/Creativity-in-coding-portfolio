@@ -1,0 +1,17 @@
+let particles = [];
+
+function setup() {
+  createCanvas(400, 400);
+for (let i = 0; i < 50; i++) {
+    particles.push({x: random(width), y: random(height), r: random(5,20)});
+  }
+}
+
+function draw() {
+  background(20);
+noStroke();
+  for (let p of particles) {
+    fill(random(200,255), random(100,200), random(50,150), 180);
+    ellipse(p.x, p.y, p.r);
+  }
+}
