@@ -1,0 +1,20 @@
+let x = 200;
+let y = 200;
+let size = 80;
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+
+  // circle
+  ellipse(x, y, size, size);
+
+  // rectangle
+  rect(x - 100, y - 40, size, size);
+
+  // line
+  line(0, 0, x, y);
+}
