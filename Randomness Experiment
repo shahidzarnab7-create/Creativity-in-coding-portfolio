@@ -1,0 +1,15 @@
+let t = 0;
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(20);
+let x = noise(t) * width;
+  let y = noise(t+5) * height;
+  fill(200,150,255);
+  ellipse(x,y,30,30);
+  t += 0.01;
+
+  
+}
