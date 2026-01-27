@@ -1,0 +1,7 @@
+let x = 0;
+
+function draw() {
+  background(220);
+  ellipse(x, 200, 40, 40);
+  x += 5;   // depends on frame rate
+}
