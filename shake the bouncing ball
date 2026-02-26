@@ -1,0 +1,46 @@
+let x, y;
+let xSpeed = 5;
+let ySpeed = 4;
+let r = 25;
+
+let shake = 0;
+let ballColor;
+
+function setup() {
+  createCanvas(500, 400);
+  x = width / 2;
+  y = height / 2;
+  ballColor = color(0, 200, 255);
+}
+
+function draw() {
+  background(20);
+
+  // Move ball
+  x += xSpeed;
+  y += ySpeed;
+
+  // Check wall collision
+  if (x + r > width || x - r < 0) {
+    xSpeed *= -1;
+    shake = 15; // trigger shake
+    ballColor = color(random(255), random(255), random(255));
+  }
+
+  if (y + r > height || y - r < 0) {
+    ySpeed *= -1;
+    shake = 15; // trigger shake
+    ballColor = color(random(255), random(255), random(255));
+  }
+
+  // Shake effect
+  let shakeX = random(-shake, shake);
+  let shakeY = random(-shake, shake);
+
+  shake *= 0.9; // reduce shake gradually
+
+  // Draw ball
+  noStroke();
+  fill(ballColor);
+  ellipse(x + shakeX, y + shakeY, r * 2);
+}
