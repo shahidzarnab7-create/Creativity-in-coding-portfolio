@@ -1,0 +1,22 @@
+let angle = 0;
+
+function setup() {
+  createCanvas(400, 400);
+  rectMode(CENTER);
+}
+
+function draw() {
+  background(30);
+
+  push(); // Save current coordinate system
+
+  translate(width / 2, height / 2); // Move origin to center
+  rotate(angle); // Rotate coordinate system
+
+  fill(0, 200, 255);
+  rect(0, 0, 150, 80); // Draw at new rotated coordinates
+
+  pop(); // Restore original coordinate system
+
+  angle += 0.03; // Animation speed
+}
