@@ -1,0 +1,14 @@
+function setup() {
+  createCanvas(600, 400);
+  background(30);
+
+  textFont('Georgia'); // Using a built-in font to avoid loading issues
+  textSize(50);
+  textAlign(CENTER, CENTER);
+  fill(255);
+}
+
+function draw() {
+  background(30);
+  text("Hello Zarnab ", width / 2, height / 2);
+}
